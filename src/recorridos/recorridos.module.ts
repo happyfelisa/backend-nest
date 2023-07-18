@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { RecorridosController } from './recorridos.controller';
 import { RecorridosService } from './recorridos.service';
+import { RecorridoController } from './recorridos.controller';
 
 @Module({
-  controllers: [RecorridosController],
-  providers: [RecorridosService]
+  controllers: [RecorridoController],
+  providers: [RecorridosService],
 })
 export class RecorridosModule {}
