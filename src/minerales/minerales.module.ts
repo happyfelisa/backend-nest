@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
-import { RegistroController } from './minerales.controller';
-import { RegistroService } from './minerales.service';
-import { RegistroRepository } from './registro.repository';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { MineralesController } from './minerales.controller';
+import { MineralesService } from './minerales.service';
+import { mineria } from './mineral.entity/mineral.entity';
+
 @Module({
-  controllers: [RegistroController],
-  providers: [RegistroService, RegistroRepository],
+  imports: [TypeOrmModule.forFeature([mineria])],
+  controllers: [MineralesController],
+  providers: [MineralesService],
 })
 export class MineralesModule {}

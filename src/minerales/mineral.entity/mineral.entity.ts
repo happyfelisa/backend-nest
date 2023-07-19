@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Registro {
+export class mineria {
   @PrimaryGeneratedColumn()
   id: number;
 

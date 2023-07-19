@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { mineria } from './mineral.entity/mineral.entity';
 import { Repository } from 'typeorm';
-import { Registro } from './mineral.entity/mineral.entity';
 
 @Injectable()
-export class RegistroService {
+export class MineralesService {
   constructor(
-    @InjectRepository(Registro)
-    private registroRepository: Repository<Registro>,
+    @InjectRepository(mineria)
+    private mineriaRepository: Repository<mineria>,
   ) {}
 
-  async getVariablesPorFecha(fecha: Date): Promise<Registro> {
-    return this.registroRepository.findOne({ where: { fecha } });
+  async getMineral(): Promise<mineria[]> {
+    return await this.mineriaRepository.find();
   }
 }

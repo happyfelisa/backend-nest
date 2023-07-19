@@ -1,9 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Init } from 'v8';
 
 @Entity()
-export class Recorrido {
+export class recorrido {
   @PrimaryGeneratedColumn()
-  id_recorrido: number;
+  id_recorrido: Init;
 
   @Column()
   fecha: Date;
